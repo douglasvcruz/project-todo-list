@@ -8,12 +8,12 @@ function addButton() {
     li.innerText = texto.value;
     ol.appendChild(li);
     texto.value = '';
-    li.addEventListener('click', () => {
-      if (li.style.backgroundColor === 'gray') {
-        li.style.backgroundColor = 'white';
-      } else {
-        li.style.backgroundColor = 'gray';
+    li.addEventListener('click', ({ target }) => {
+      const liCreated = document.getElementsByTagName('li');
+      for (let i = 0; i < liCreated.length; i += 1) {
+        liCreated[i].style.backgroundColor = 'white';
       }
+      target.style.backgroundColor = 'gray';
     });
   });
 }
