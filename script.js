@@ -8,6 +8,13 @@ function addButton() {
     li.innerText = texto.value;
     ol.appendChild(li);
     texto.value = '';
+    li.addEventListener('click', () => {
+      if (li.style.backgroundColor === 'gray') {
+        li.style.backgroundColor = 'white';
+      } else {
+        li.style.backgroundColor = 'gray';
+      }
+    });
   });
 }
 
