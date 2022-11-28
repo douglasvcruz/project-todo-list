@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+#funcionamento {
+  margin-top: 20px;
+}
