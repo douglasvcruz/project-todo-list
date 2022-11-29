@@ -4,6 +4,9 @@ const button = document.getElementById('criar-tarefa');
 const ol = document.getElementById('lista-tarefas');
 const texto = document.getElementById('texto-tarefa');
 const guardar = document.getElementById('salvar-tarefas');
+const abaixar = document.getElementById('mover-baixo');
+const subir = document.getElementById('mover-cima');
+const removerSelecionado = document.getElementById('remover-selecionado');
 
 const liOneClick = (e) => {
   const liCreated = document.getElementsByTagName('li');
@@ -51,7 +54,50 @@ const adiciona = () => {
   }
 };
 
+const baixo = () => {
+  const li = document.querySelectorAll('li');
+
+  for (let i = 0; i < li.length; i += 1) {
+    if (li[i].style.backgroundColor === 'gray' && li[i + 1]) {
+      const guardarLi = li[i].innerHTML;
+      li[i].innerHTML = li[i + 1].innerHTML;
+      li[i + 1].innerHTML = guardarLi;
+      li[i].style.backgroundColor = 'white';
+      li[i + 1].style.backgroundColor = 'gray';
+      break;
+    }
+  }
+};
+
+const cima = () => {
+  const li = document.querySelectorAll('li');
+
+  for (let i = 0; i < li.length; i += 1) {
+    if (li[i].style.backgroundColor === 'gray' && li[i - 1]) {
+      const guardarLi = li[i].innerHTML;
+      li[i].innerHTML = li[i - 1].innerHTML;
+      li[i - 1].innerHTML = guardarLi;
+      li[i].style.backgroundColor = 'white';
+      li[i - 1].style.backgroundColor = 'gray';
+      break;
+    }
+  }
+};
+
+const selecionado = () => {
+  const selected = document.querySelectorAll('li');
+  for (let i = 0; i < selected.length; i += 1) {
+    if (selected[i].style.backgroundColor === 'gray') {
+      selected[i].remove();
+    }
+  }
+};
+
 adiciona();
+
+removerSelecionado.addEventListener('click', selecionado);
+subir.addEventListener('click', cima);
+abaixar.addEventListener('click', baixo);
 guardar.addEventListener('click', armazena);
 removerFinal.addEventListener('click', removerFinalizados);
 button.addEventListener('click', addButton);
