@@ -47,9 +47,9 @@ const removerFinalizados = () => {
 const armazena = () => localStorage.setItem('ol', ol.innerHTML);
 const adiciona = () => {
   if (localStorage.getItem('ol')) {
-    return ol.innerHTML = localStorage.getItem('ol');
+    ol.innerHTML = localStorage.getItem('ol');
   }
-}
+};
 
 adiciona();
 guardar.addEventListener('click', armazena);
