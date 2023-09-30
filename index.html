@@ -11,19 +11,23 @@
 <body>
   <header>Minha Lista de Tarefas</header>
   <p class="ms-3" id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-  <label>
-    <div class="input-group ms-3">
-      <span class="input-group-text" id="basic-addon1">Texto</span>
-      <input type="text" class="form-control" placeholder="Digite algo" aria-label="Username" aria-describedby="basic-addon1" id="texto-tarefa">
-    </div>
-  </label>
-  <button class="btn btn-secondary ms-3" id="criar-tarefa">Criar</button>
-  <button class="btn btn-secondary ms-3" id="apaga-tudo">Apagar</button>
-  <button class="btn btn-secondary ms-3" id="remover-finalizados">Finalizados</button>
-  <button class="btn btn-secondary ms-3" id="salvar-tarefas">Salvar tarefas</button>
-  <button class="btn btn-secondary ms-3" id="mover-cima">Cima</button>
-  <button class="btn btn-secondary ms-3" id="mover-baixo">Baixo</button>
-  <button class="btn btn-secondary ms-3" id="remover-selecionado">Remover Selecionado</button>
+  <main>
+    <label>
+      <div class="input-group ms-3">
+        <span class="input-group-text" id="basic-addon1">Tarefa</span>
+        <input type="text" class="form-control" placeholder="Digite algo" aria-label="Username" aria-describedby="basic-addon1" id="texto-tarefa">
+      </div>
+    </label>
+    <section>
+      <button class="btn btn-secondary ms-3 mb-2" id="criar-tarefa">Criar</button>
+      <button class="btn btn-secondary ms-3 mb-2" id="salvar-tarefas">Salvar tarefas</button>
+      <button class="btn btn-secondary ms-3 mb-2" id="mover-cima">Cima</button>
+      <button class="btn btn-secondary ms-3 mb-2" id="mover-baixo">Baixo</button>
+      <button class="btn btn-secondary ms-3 mb-2" id="apaga-tudo">Apagar Tudo</button>
+      <button class="btn btn-secondary ms-3 mb-2" id="remover-finalizados">Remover Finalizados</button>
+      <button class="btn btn-secondary ms-3 mb-2" id="remover-selecionado">Remover Selecionado</button>
+    </section>
+  </main>
   <ol id="lista-tarefas"></ol>
   <script src="script.js"></script>
 </body>
